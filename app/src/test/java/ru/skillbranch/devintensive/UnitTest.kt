@@ -2,9 +2,9 @@ package ru.skillbranch.devintensive
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import ru.skillbranch.devintensive.extentions.TimeUnits
-import ru.skillbranch.devintensive.extentions.add
-import ru.skillbranch.devintensive.extentions.format
+import ru.skillbranch.devintensive.extensions.TimeUnits
+import ru.skillbranch.devintensive.extensions.add
+import ru.skillbranch.devintensive.extensions.format
 import ru.skillbranch.devintensive.models.*
 import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
@@ -14,7 +14,7 @@ import java.util.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class UnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
