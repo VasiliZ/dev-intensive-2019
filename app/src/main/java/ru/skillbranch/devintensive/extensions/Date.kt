@@ -16,9 +16,9 @@ fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND): Date {
     var time = this.time
     time += when (units) {
         TimeUnits.SECOND -> value * SECOND
-        TimeUnits.MINUTES -> value * MINUTE
-        TimeUnits.HOURS -> value * HOUR
-        TimeUnits.DAYS -> value * DAY
+        TimeUnits.MINUTE -> value * MINUTE
+        TimeUnits.HOUR -> value * HOUR
+        TimeUnits.DAY -> value * DAY
         else -> throw IllegalStateException("Invalid unit")
     }
 
@@ -27,5 +27,5 @@ fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND): Date {
 }
 
 enum class TimeUnits {
-    SECOND, MINUTES, HOURS, DAYS
+    SECOND, MINUTE, HOUR, DAY
 }

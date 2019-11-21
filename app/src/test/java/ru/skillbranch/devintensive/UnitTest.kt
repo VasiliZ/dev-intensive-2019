@@ -53,8 +53,8 @@ class UnitTest {
     @Test
     fun test_copy() {
         val user = User.makeUser("John Week")
-        val user2 = user.copy(lastVisit = Date().add(-2, TimeUnits.MINUTES))
-        val user3 = user.copy(id = "2", lastVisit = Date().add(2, TimeUnits.HOURS))
+        val user2 = user.copy(lastVisit = Date().add(-2, TimeUnits.MINUTE))
+        val user3 = user.copy(id = "2", lastVisit = Date().add(2, TimeUnits.HOUR))
 
         println(
             """
