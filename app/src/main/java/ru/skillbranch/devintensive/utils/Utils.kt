@@ -3,7 +3,7 @@ package ru.skillbranch.devintensive.utils
 import java.util.*
 
 object Utils {
-    fun parseName(fullName: String?): Pair<String?, String?> {
+    fun parseFullName(fullName: String?): Pair<String?, String?> {
 
         val parts: List<String>? = fullName?.split(" ")
         var firstName: String? = parts?.getOrNull(0)?.trim()
