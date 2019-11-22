@@ -78,31 +78,10 @@ object Utils {
 
     fun toInitials(firstName: String?, lastName: String?): String? {
 
-        val firstInitial: String? = if (firstName.isNullOrBlank()) {
-            "null"
-        } else {
-            firstName.substring(0, 1).toUpperCase()
-        }
+        val first = if (firstName.isNullOrBlank()) "" else firstName.substring(0, 1).toUpperCase()
+        val second = if (lastName.isNullOrBlank()) "" else lastName.substring(0, 1).toUpperCase()
 
-        val secondInitial: String? = if (lastName.isNullOrBlank()) {
-            "null"
-        } else {
-            lastName.substring(0, 1).toUpperCase()
-        }
-
-        val concatenate: String = firstInitial + secondInitial
-
-        if (firstInitial == "null" && secondInitial == "null") {
-            return "null"
-        }
-
-        if (firstInitial == "null" && secondInitial!!.isNotEmpty()) {
-            return secondInitial
-        }
-        if (firstInitial!!.isNotEmpty() && secondInitial == "null") {
-            return firstInitial
-        }
-        return concatenate
+        return "$first$second".ifEmpty { null }
     }
 
 }
