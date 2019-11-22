@@ -9,11 +9,11 @@ object Utils {
         val firstName: String? = parts?.getOrNull(0)
         val lastName: String? = parts?.getOrNull(1)
 
-        val first = if (firstName.isNullOrEmpty()) "null" else firstName
-        val second = if (lastName.isNullOrEmpty()) "null" else lastName
+        val first = if (firstName.isNullOrEmpty()) null else firstName
+        val second = if (lastName.isNullOrEmpty()) null else lastName
 
 
-        return Pair(first, second)
+        return first to second
     }
 
     fun transliteration(s: String, divader: String = " "): String {

@@ -91,14 +91,17 @@ class UnitTest {
         val fullName1 = "Jonh"
         val fullName2 = ""
         val fullName3 = " "
+        val fullName4 = null
         val pair = Utils.parseFullName(fullName1)
-        println(pair.first + ", " + pair.second)
+        println("${pair.first} ${pair.second}")
         val pair4 = Utils.parseFullName(fullName)
-        println(pair4.first + ", " + pair4.second)
+        println(pair4.first + pair4.second)
         val pair1 = Utils.parseFullName(fullName2)
-        println(pair1.first + ", " + pair1.second)
+        println(pair1.first + pair1.second)
         val pair2 = Utils.parseFullName(fullName3)
-        println(pair2.first + ", " + pair2.second)
+        println(pair2.first + pair2.second)
+        val pair5 = Utils.parseFullName(fullName4)
+        println(pair5.first + pair5.second)
 
     }
 
