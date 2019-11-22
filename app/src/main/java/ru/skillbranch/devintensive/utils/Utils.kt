@@ -6,23 +6,14 @@ object Utils {
     fun parseFullName(fullName: String?): Pair<String?, String?> {
 
         val parts: List<String>? = fullName?.split(" ")
-        var firstName: String? = parts?.getOrNull(0)?.trim()
-        var lastName: String? = parts?.getOrNull(1)?.trim()
-        if (parts!!.size < 2) {
-            if (parts[0].isEmpty()) {
-                return Pair("null", "null")
-            }
-            firstName = parts.getOrNull(0)
-            lastName = "null"
-        } else {
-            if (parts[0].isEmpty() && parts[1].isEmpty()) {
-                firstName = "null"
-                lastName = "null"
-            }
-        }
+        val firstName: String? = parts?.getOrNull(0)
+        val lastName: String? = parts?.getOrNull(1)
+
+        val first = if (firstName.isNullOrEmpty()) "null" else firstName
+        val second = if (lastName.isNullOrEmpty()) "null" else lastName
 
 
-        return Pair(firstName, lastName)
+        return Pair(first, second)
     }
 
     fun transliteration(s: String, divader: String = " "): String {
