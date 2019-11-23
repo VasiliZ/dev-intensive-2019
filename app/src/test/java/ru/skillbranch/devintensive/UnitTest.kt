@@ -5,6 +5,7 @@ import org.junit.Test
 import ru.skillbranch.devintensive.extensions.TimeUnits
 import ru.skillbranch.devintensive.extensions.add
 import ru.skillbranch.devintensive.extensions.format
+import ru.skillbranch.devintensive.extensions.humanizeDiff
 import ru.skillbranch.devintensive.models.*
 import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
@@ -127,5 +128,31 @@ class UnitTest {
         println(transliterations)
         println(transliterations1)
         println(transliterations2)
+    }
+
+    @Test
+    fun test_humanaze_diff() {
+        val date = Date().add(2, TimeUnits.MINUTE).humanizeDiff()
+        val date2 = Date().add(-2, TimeUnits.MINUTE).humanizeDiff()
+        val date3 = Date().add(7, TimeUnits.DAY).humanizeDiff()
+        println(date)
+        println(date2)
+        println(date3)
+    }
+
+    @Test
+    fun test_user_builder() {
+        val userBuilder = User.Builder()
+            .id("1")
+            .firstName("Vasili")
+            .lastName("Zaitsev")
+            .avatar("null")
+            .rating(1000)
+            .respect(100)
+            .lastVisit(Date())
+            .isOnline(true)
+            .build()
+
+        println(userBuilder.firstName)
     }
 }

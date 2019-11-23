@@ -17,8 +17,36 @@ object Utils {
     }
 
     fun transliteration(s: String, divader: String = " "): String {
-        val parts: List<String>? = s.split(" ")
-        val dictionary = mapOf(
+        val buffer = StringBuilder()
+        val map = fillMap()
+
+        for (char in s.toCharArray()) {
+            buffer.append(transliterationChar(char, map))
+        }
+
+        return buffer.toString().replace(" ", divader)
+    }
+
+    private fun transliterationChar(char: Char, map: HashMap<Char, String>): Any {
+        val lowerCaseChar = map[char.toLowerCase()] ?: char.toString()
+
+        return if (char.isUpperCase() && lowerCaseChar.isNotEmpty()) {
+            lowerCaseChar.capitalize()
+        } else {
+            lowerCaseChar
+        }
+    }
+
+    fun toInitials(firstName: String?, lastName: String?): String? {
+
+        val first = if (firstName.isNullOrBlank()) "" else firstName.substring(0, 1).toUpperCase()
+        val second = if (lastName.isNullOrBlank()) "" else lastName.substring(0, 1).toUpperCase()
+
+        return "$first$second".ifEmpty { null }
+    }
+
+    private fun fillMap(): HashMap<Char, String> {
+        return hashMapOf(
             'а' to "a",
             'б' to "b",
             'в' to "v",
@@ -53,35 +81,6 @@ object Utils {
             'ю' to "yu",
             'я' to "ya"
         )
-        val buffer = StringBuilder()
-        for (words: String in parts!!.iterator()) {
-            val regex = Regex(pattern = "^[a-zA-Z]*$")
-            if (words.matches(regex)) {
-                buffer.append(words)
-            }
-            for (i in words.toLowerCase(Locale.ROOT).toCharArray()) {
-                for (char in dictionary) {
-                    if (i == char.key) {
-                        buffer.append(char.value)
-                    }
-                }
-            }
-            buffer.append(divader)
-        }
-        val upperFirst = buffer[0].toUpperCase()
-        val upperSecond = buffer[buffer.indexOf(divader) + 1].toUpperCase()
-        buffer.setCharAt(0, upperFirst)
-        buffer.delete(buffer.lastIndex, buffer.lastIndex + 1)
-        buffer.setCharAt(buffer.indexOf(divader) + 1, upperSecond)
-        return buffer.toString()
-    }
-
-    fun toInitials(firstName: String?, lastName: String?): String? {
-
-        val first = if (firstName.isNullOrBlank()) "" else firstName.substring(0, 1).toUpperCase()
-        val second = if (lastName.isNullOrBlank()) "" else lastName.substring(0, 1).toUpperCase()
-
-        return "$first$second".ifEmpty { null }
     }
 
 }
