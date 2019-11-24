@@ -2,10 +2,7 @@ package ru.skillbranch.devintensive
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import ru.skillbranch.devintensive.extensions.TimeUnits
-import ru.skillbranch.devintensive.extensions.add
-import ru.skillbranch.devintensive.extensions.format
-import ru.skillbranch.devintensive.extensions.humanizeDiff
+import ru.skillbranch.devintensive.extensions.*
 import ru.skillbranch.devintensive.models.*
 import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
@@ -154,5 +151,29 @@ class UnitTest {
             .build()
 
         println(userBuilder.firstName)
+    }
+
+    @Test
+    fun test_plural() {
+        val plural_print = TimeUnits.MINUTE.plural(1)
+        println(plural_print)
+    }
+
+    @Test
+    fun test_string_truncate() {
+        val str = "Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес".truncate()
+        val str1 = "B    ".truncate(3)
+        val str3 = "B la ald".truncate(2)
+        println(str)
+        println(str1)
+        println(str3)
+    }
+
+    @Test
+    fun test_no_html_tags() {
+        val with_html =
+            "<p class=\"title\">Образовательное              IT-сообщество Skill Branch</p>".stripHtml()
+        println(with_html)
+
     }
 }

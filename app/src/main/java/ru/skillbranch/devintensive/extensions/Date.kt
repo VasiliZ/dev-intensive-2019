@@ -26,12 +26,31 @@ fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND): Date {
     return this
 }
 
-enum class TimeUnits {
-    SECOND, MINUTE, HOUR, DAY
+enum class TimeUnits(val ONE: String, val MANY: String, val FIEW: String) {
+    SECOND("секунда", "секунды", "секунд"),
+    MINUTE("минута", "минуты", "минут"),
+    HOUR("час", "часа", "часов"),
+    DAY("день", "дня", "дней");
+
+    fun plural(value: Int): String {
+        return "$value ${calculatePlural(value)}"
+    }
+
+    private fun calculatePlural(num: Int): String {
+        return when {
+            num in 5..50 -> MANY
+            num % 10 == 1 -> ONE
+            num % 10 in 2..4 -> FIEW
+            else -> MANY
+        }
+
+    }
+
+
 }
 
+
 fun Date.humanizeDiff(date: Date = Date()): String {
-    var humanizeDiff = ""
     var diff = date.time - this.time
 
 
