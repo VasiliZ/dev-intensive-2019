@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d("M_MainActivity", "OnCrete")
-        benderImage = im_bender
-        textMessage = ed_message
-        sendMessage = iv_send_message
+        benderImage = iv_bender
+        textMessage = et_message
+        sendMessage = iv_send
         text = tv_text
 
         val status = savedInstanceState?.getString("STATUS") ?: Bender.Status.NORMAL.name
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         this.isKeyboardOpen()
         this.isKeyboardClosed()
         text.text = bender.askQuestion()
-        iv_send_message.setOnClickListener(this)
+        iv_send.setOnClickListener(this)
         textMessage.setOnEditorActionListener { v, actionId, event ->
             when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if (v?.id == R.id.iv_send_message) {
+        if (v?.id == R.id.iv_send) {
             applyInputData()
         }
     }

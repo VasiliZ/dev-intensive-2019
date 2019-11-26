@@ -16,7 +16,7 @@
         android:textSize="@dimen/font_large_24" />
 
     <ImageView
-        android:id="@+id/im_bender"
+        android:id="@+id/iv_bender"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -29,7 +29,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/ed_message"
+            android:id="@+id/et_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_small_16pd"
@@ -44,7 +44,7 @@
             android:textColorHint="@android:color/secondary_text_dark" />
 
         <ImageView
-            android:id="@+id/iv_send_message"
+            android:id="@+id/iv_send"
             android:layout_width="0dp"
             android:layout_height="@dimen/size_send_button"
             android:layout_weight="1"
