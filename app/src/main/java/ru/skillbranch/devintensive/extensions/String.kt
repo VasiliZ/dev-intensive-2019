@@ -1,5 +1,7 @@
 package ru.skillbranch.devintensive.extensions
 
+const val ESCAPE_TAGS = "\\<.*?\\>"
+const val ESCAPE_SPACES = "\\s{2,}"
 fun String.truncate(endOfString: Int = 16): String {
     val builder = StringBuilder().append(this)
     if (endOfString > this.length) {
@@ -14,8 +16,8 @@ fun String.truncate(endOfString: Int = 16): String {
 }
 
 fun String.stripHtml(): String {
-    val pattern = "\\<.*?\\>".toRegex()
-    val removeSpaces = "\\s{2,}".toRegex()
+    val pattern = ESCAPE_TAGS.toRegex()
+    val removeSpaces = ESCAPE_SPACES.toRegex()
     val noHtmlString = pattern.replace(this, "")
     val andRemovingSpaces = removeSpaces.replace(noHtmlString, " ")
     return andRemovingSpaces
