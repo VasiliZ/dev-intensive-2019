@@ -33,13 +33,7 @@ private fun checkKeyboard(activity: Activity): Boolean {
         rootView.getWindowVisibleDisplayFrame(rect)
         val heightWindow = rootView.height
         val keyboardHeight = rootView.height - rect.height()
-        if (keyboardHeight > heightWindow * 0.15) {
-            Log.d("M_Activity", "open board")
-            status = true
-
-            Log.d("M_Activity", "closed board")
-            status = false
-        }
+        status = keyboardHeight > heightWindow * 0.15
     }
     return status
 }
