@@ -176,4 +176,9 @@ class UnitTest {
         println(with_html)
 
     }
+
+    @Test
+    fun test_correct_input_git_account() {
+        println(Utils.isCorrectGitAccount("https://github.com/VasiliZ").toString())
+    }
 }

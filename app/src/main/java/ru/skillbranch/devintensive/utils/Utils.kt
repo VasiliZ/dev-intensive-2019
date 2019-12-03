@@ -83,6 +83,11 @@ object Utils {
         )
     }
 
+    fun isCorrectGitAccount(nameAccount: CharSequence): Boolean {
+        val repoPattern = "(https:\\/\\/github\\.com\\/(.+))".toRegex()
+        return repoPattern.matches(nameAccount)
+    }
+
 }
 
 
