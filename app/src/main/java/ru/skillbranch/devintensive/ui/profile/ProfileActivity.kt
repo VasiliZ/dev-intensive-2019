@@ -19,7 +19,7 @@ import ru.skillbranch.devintensive.models.Profile
 import ru.skillbranch.devintensive.utils.Utils
 import ru.skillbranch.devintensive.viewmodels.ProfileViewModel
 
-class MainActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
     companion object {
         const val IS_EDIT_MODE = "IS_EDIT_MODE"
     }
@@ -86,10 +86,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-
-        if (iv_avatar.drawable == null) {
-            iv_avatar.setText(viewModel.getProfile()?.prepareInitials().toString())
-        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
