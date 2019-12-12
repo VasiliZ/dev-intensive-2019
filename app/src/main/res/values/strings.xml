@@ -6,4 +6,5 @@
     <string name="hint_last_name">Фамилия</string>
     <string name="hint_about">О себе</string>
     <string name="hint_repo">Репозиторий</string>
+    <string name="chats_archive">Архив чатов</string>
 </resources>

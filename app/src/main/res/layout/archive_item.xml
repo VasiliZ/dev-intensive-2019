@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_normal_16pd">
+
+    <ImageView
+        android:id="@+id/aiv_archive_icon"
+        android:layout_width="@dimen/item_avatar_size"
+        android:layout_height="@dimen/item_avatar_size"
+        android:src="@drawable/ic_archive_black_24dp" />
+
+    <TextView
+        android:id="@+id/tv_message_author_archive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_normal_16pd"
+        android:layout_toEndOf="@id/aiv_archive_icon"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:text="@string/chats_archive"
+        android:textColor="@color/color_primary_light"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_message_archive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_message_author_archive"
+        android:layout_marginLeft="@dimen/spacing_normal_16pd"
+        android:layout_toEndOf="@id/aiv_archive_icon"
+        android:textSize="14sp"
+        tools:text="last message" />
+
+    <TextView
+        android:id="@+id/tv_date_archive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textSize="10sp"
+        tools:text="18:00" />
+
+    <TextView
+        android:id="@+id/tv_counter_archive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_date_archive"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_counter"
+        android:gravity="center"
+        android:minWidth="20dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        tools:text="1000" />
+</RelativeLayout>

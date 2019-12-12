@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    android:padding="@dimen/spacing_normal_16pd">
+
+    <ru.skillbranch.devintensive.ui.custom.AvatarImageView
+        android:id="@+id/iv_avatar_single"
+        android:layout_width="@dimen/item_avatar_size"
+        android:layout_height="@dimen/item_avatar_size"
+        android:layout_alignParentStart="true">
+
+    </ru.skillbranch.devintensive.ui.custom.AvatarImageView>
+
+    <View
+        android:id="@+id/sv_indicator"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/tv_text_message_single"
+        android:background="@drawable/bg_indicator" />
+
+    <TextView
+        android:id="@+id/tv_text_title_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_normal_16pd"
+        android:layout_marginEnd="@dimen/spacing_normal_16pd"
+        android:layout_toStartOf="@id/tv_date_single"
+        android:layout_toEndOf="@id/iv_avatar_single"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        tools:text="Chat title" />
+
+    <TextView
+        android:id="@+id/tv_text_message_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_text_title_single"
+        android:layout_marginStart="@dimen/spacing_normal_16pd"
+        android:layout_marginEnd="@dimen/spacing_normal_16pd"
+        android:layout_toStartOf="@id/tv_counter_single"
+        android:layout_toEndOf="@id/iv_avatar_single"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        tools:text="Какой нибудь текст" />
+
+    <TextView
+        android:id="@+id/tv_date_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="10sp"
+        tools:text="18:00" />
+
+    <TextView
+        android:id="@+id/tv_counter_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_date_single"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_counter"
+        android:gravity="center"
+        android:minWidth="20dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="@android:color/white"
+
+        android:textSize="10sp"
+        tools:text="5000" />
+
+</RelativeLayout>
